@@ -1,6 +1,20 @@
 #!/bin/bash
-# start_server.sh
+# after_install.sh
 
-# Example: Start Laravel application server (adjust the command based on your setup)
+sudo apt install php
+
+# Navigate to the Laravel project directory
 cd /var/www/html/laravel
-php artisan serve --host=0.0.0.0 --port=8000 > /dev/null 2>&1 &
+
+# Install Composer dependencies
+composer install
+composer update
+
+
+
+
+# Cache configuration
+php artisan config:cache
+
+# Run database migrations (if needed)
+# php artisan migrate --force
