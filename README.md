@@ -1,6 +1,6 @@
 AWS CICD Pipeline Code Deployment to AWS EC2 Instance
 User Data for Dependencies installations for ubuntu:-
-
+~~~
 #!/bin/bash
 sudo apt -y update
 sudo apt -y install ruby
