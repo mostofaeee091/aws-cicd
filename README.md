@@ -13,6 +13,9 @@ sudo apt install -y python-pip
 sudo pip install awscli
 
 ~~~
+
+...............................
+~~~
 server {
     listen 80;
     server_name _;  # Allow all IP addresses
