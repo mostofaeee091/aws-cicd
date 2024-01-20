@@ -3,26 +3,17 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/laravel  # Adjust the destination based on your Laravel project structure
-permissions:
-  - object: /var/www/html/laravel/storage
-    pattern: "**"
-    owner: ubuntu
-    group: www-data
 
 hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-      runas: ubuntu
   AfterInstall:
     - location: scripts/configure_laravel.sh
       timeout: 300
-      runas: ubuntu
+      runas: ubuntu  # Adjust to your server user
   ApplicationStart:
     - location: scripts/start_server.sh
       timeout: 300
-      runas: ubuntu
+      runas: ubuntu  # Adjust to your server user
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 300
-      runas: ubuntu
+      runas: ubuntu  # Adjust to your server user
