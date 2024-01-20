@@ -1,5 +1,12 @@
 #!/bin/bash
-# stop_server.sh
+# scripts/stop_server.sh
 
-# Example: Stop Laravel application server
-# pkill -f "php artisan serve"
+# Navigate to the Laravel project directory
+cd /var/www/html/laravel
+
+# Check if the Laravel server process is running
+if pgrep -x "php" > /dev/null; then
+    # Stop the Laravel server
+    php artisan down
+fi
+
