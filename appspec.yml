@@ -5,11 +5,11 @@ files:
     destination: /var/www/html/laravel  # Adjust the destination based on your Laravel project structure
 
 hooks:
+  AfterInstall:
+    - location: scripts/install_nginx.sh
+      timeout: 300
+      runas: root  # Adjust to your server user
   ApplicationStart:
-    - location: scripts/start_server.sh
+    - location: scripts/start_nginx.sh
       timeout: 300
-      runas: ubuntu  # Adjust to your server user
-  ApplicationStop:
-    - location: scripts/stop_server.sh
-      timeout: 300
-      runas: ubuntu  # Adjust to your server user
+      runas: root  # Adjust to your server user
